@@ -1,0 +1,248 @@
+<html>
+    <head>
+        <style>
+            * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+<style>
+        .product-container {
+            text-align: center;
+        }
+        .product-image {
+            max-width: 300px;
+        }
+        .product-cost {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .add-to-cart-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+</style>
+<script>
+        // Create an empty array to hold the cart items
+        let cartItems = [];
+
+        function addToCart(productName) {
+            // Find the product in the cartItems array based on its name
+            const product = cartItems.find(item => item.name === productName);
+
+            if (product) {
+                // If the product is already in the cart, increase its quantity
+                product.quantity++;
+            } else {
+                // If the product is not in the cart, add it with quantity 1
+                cartItems.push({ name: productName, quantity: 1 });
+            }
+
+            // Update the cart display
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            // Find the cart container element
+            const cartContainer = document.getElementById("cart");
+
+            // Clear the current cart content
+            cartContainer.innerHTML = "";
+
+            // Add each item in the cart to the cart container
+            cartItems.forEach(item => {
+                const cartItem = document.createElement("div");
+                cartItem.textContent = `${item.name} x${item.quantity}`;
+                cartContainer.appendChild(cartItem);
+            });
+        }
+    </script>
+    
+
+    </head>
+    <body>
+      <div class="cart-container" style="float:right;">
+        <h2>my basket</h2>
+        <image src="j.jpg"style="max-width: 100px;
+        margin-left:350px;padding-right:80px;"></image>
+        <div id="cart"></div>
+    </div>
+    
+        <div class="header">
+            <h1>SNACKS</h1>
+          </div>
+          
+        <div class="row">
+            <div class="column">
+              <h2>HIDE AND SEEK</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://storage.googleapis.com/bwi-1084.appspot.com/products/hBFw7njAzgCUBJqJebmj/images/i4ZjuLepWNhatcTWAoq5.jpg?GoogleAccessId=firebase-adminsdk-rscvw%40bwi-1084.iam.gserviceaccount.com&Expires=16730323200&Signature=GZUTFF07rM2X2Y7TPym2I3C%2BkpGYYisIhI4S2NtjviAc84okEjUqwkZDqNKWyMb3I4cgjN0MkIO8Lh9XG0y37%2BemqTbm%2BGketwKy5jMZSKa0xMnTgtk%2BZXZje1swSxkTqmteo%2BT3o4B4rxdpbFHFIHXts4h7g26rXcyT5OabHvNcGDaFTPSXDyiWM%2FoGzJ6%2BXROHc1RfePDMvWkc4TtW1%2B7hFqQwfG5BDFQKJH3lEGhdIQf%2FOs7kEkUOy20SkgOhClyaQk8Wz%2FvIJqwv2vpPTjp7fx%2BXUOwMe0MwAgTWywUaO4EMbF%2B58lN7mVry1zr1cF1YFjy4To2lcDSevJ3bpQ%3D%3D" alt="Product Image">
+                <p class="product-cost">Cost:rs. 30</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="HIDE AND SEEK">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="30">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart" >
+               </form>
+            </div>
+        
+            </div>
+            
+            
+            <div class="column">
+              <h2>GONE MAD PACK</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://5.imimg.com/data5/SELLER/Default/2022/1/HY/JF/OG/6335932/gonemad-chocolate-stick-pack-of-96pec-500x500.jpg" alt="Product Image">
+                <p class="product-cost">Cost:rs. 20</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="GONE MAD">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="20">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+               </form>
+            </div>
+            </div>
+            
+            <div class="column">
+              <h2>LAYS</h2>
+              <div class="product-container">
+                <img class="product-image" src="data:image/jpeg;base64,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" alt="Product Image">
+                <p class="product-cost">Cost:rs. 20</p>
+                <form action="cart.php" method="get">
+                  <input type="hidden" name="item" value="LAYS">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="20">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%"  value="Add to Cart">
+               </form>
+            </div>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <h2>CUPCAKE</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://clipart-library.com/images_k/cupcakes-transparent-background/cupcakes-transparent-background-17.png" alt="Product Image">
+                <p class="product-cost">Cost:rs. 15</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="CUPCAKE">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="15">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+               </form>
+            </div>
+              
+            </div>
+            
+            <div class="column">
+              <h2>CUP NOODLES</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://www.bigbasket.com/media/uploads/p/l/40110425_3-nissin-cup-noodles-tangy-tomato.jpg" alt="Product Image">
+                <p class="product-cost">Cost:rs. 40</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="CUP NOODLES">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="40">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+               </form>
+            </div>
+              
+            </div>
+            
+            <div class="column">
+              <h2>CHOCOLATES</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://clipart-library.com/images_k/food-transparent-tumblr/food-transparent-tumblr-1.png" alt="Product Image">
+                <p class="product-cost">Cost:rs. 20</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="CHOCOLATES">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="20">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+               </form>
+            </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <h2>MOONG DHALL</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://5.imimg.com/data5/GX/LN/MY-35438113/haldirams-moong-dal-500x500.jpg" alt="Product Image">
+                <p class="product-cost">Cost:rs. 10</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="MOONG DHALL">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="10">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%"  value="Add to Cart">
+               </form>
+            </div>
+            </div>
+            
+            <div class="column">
+              <h2>POLO</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://image1ws.indotrading.com/s3/productimages/webp/co37129/p773452/w425-h425/16c11726-b85b-41e8-b47c-5a53c0b2099f.jpg" alt="Product Image">
+                <p class="product-cost">Cost:rs. 10</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="POLO">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="10">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%"  value="Add to Cart">
+               </form>
+            </div>
+            </div>
+            
+            <div class="column">
+              <h2>BRITANIA MILK</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://tiimg.tistatic.com/fp/1/007/612/britannia-milk-bikis-biscuits-rich-in-vitamins-73-5-g-with-sweet-tasty-delicious-flavour-474.jpg " alt="Product Image">
+                <p class="product-cost">Cost:rs. 10</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="BRITANIA MILK">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="10">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+               </form>
+              </div>
+          </div>
+    </body>
+</html>

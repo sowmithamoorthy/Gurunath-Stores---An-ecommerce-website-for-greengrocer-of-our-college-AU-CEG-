@@ -1,0 +1,49 @@
+<html><?php
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $firstname = $_POST["fname"];
+    $lastname = $_POST["lname"];
+    $phone = $_POST["no"];
+    $email = $_POST["em"];
+    $address = $_POST["ad"];
+    $payment_option = $_POST["pa"];
+
+    $servername = "localhost";
+    $username = "root";
+    $password = "";
+    $dbname = "guru";
+    $conn = new mysqli($servername, $username, $password);
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
+    $sql = "CREATE DATABASE IF NOT EXISTS $dbname";
+    if ($conn->query($sql) === TRUE) {
+        $conn->select_db($dbname);
+        $sql = "CREATE TABLE IF NOT EXISTS shopping (
+            Firstname VARCHAR(50),
+            Lastname VARCHAR(50),
+            Mail_id VARCHAR(100),
+            Phone_no INT,
+            Address VARCHAR(255),
+            Payment_option VARCHAR(20)
+        )";
+        if ($conn->query($sql) === TRUE) {
+            $sql = "INSERT INTO shopping (Firstname, Lastname, Mail_id, Phone_no, Address, Payment_option) 
+                    VALUES ('$firstname', '$lastname', '$email', '$phone', '$address', '$payment_option')";
+            if ($conn->query($sql) === TRUE) {
+                // Redirect to another page after successful insertion
+                header("Location: 1.html");
+                exit();
+            } else {
+                echo "Error inserting data: " . $conn->error . "<br>";
+            }
+        } else {
+            echo "Error creating table: " . $conn->error . "<br>";
+        }
+    } else {
+        echo "Error creating database: " . $conn->error . "<br>";
+    }
+    $conn->close();
+}
+?>
+</body>
+</html>

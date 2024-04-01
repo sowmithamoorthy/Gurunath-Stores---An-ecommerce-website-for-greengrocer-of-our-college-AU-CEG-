@@ -1,0 +1,299 @@
+ <html>
+    <head>
+        <style>
+            * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+<style>
+        .product-container {
+            text-align: center;
+        }
+        .product-image {
+            max-width: 300px;
+        }
+        .product-cost {
+            font-weight: bold
+        }
+    <head>
+        <style>
+            * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+<style>
+        .product-container {
+            text-align: center;
+        }
+        .product-image {
+            max-width: 300px;
+        }
+        .product-cost {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .add-to-cart-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+</style>
+<script>
+        // Create an empty array to hold the cart items
+        let cartItems = [];
+
+        function addToCart(productName) {
+            // Find the product in the cartItems array based on its name
+            const product = cartItems.find(item => item.name === productName);
+
+            if (product) {
+                // If the product is already in the cart, increase its quantity
+                product.quantity++;
+            } else {
+                // If the product is not in the cart, add it with quantity 1
+                cartItems.push({ name: productName, quantity: 1 });
+            }
+
+            // Update the cart display
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            // Find the cart container element
+            const cartContainer = document.getElementById("cart");
+
+            // Clear the current cart content
+            cartContainer.innerHTML = "";
+
+            // Add each item in the cart to the cart container
+            cartItems.forEach(item => {
+                const cartItem = document.createElement("div");
+                cartItem.textContent = `${item.name} x${item.quantity}`;
+                cartContainer.appendChild(cartItem);
+            });
+        }
+    </script>
+    
+
+    </head>
+    <body>
+      <div class="cart-container" style="float:right;">
+        <image src="j.jpg"style="max-width: 100px;
+        margin-left:350px;padding-right:80px;"></image>
+        <div id="cart"></div>
+    </div>
+    
+        <div class="header">
+            <h1>STATIONARIES</h1>
+          </div>
+          
+        <div class="row">
+            <div class="column">
+              <h2>NOTEBOOK</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://www.jiomart.com/images/product/original/490062684/classmate-single-line-soft-notebook-172-pgs-product-images-o490062684-p490062684-2-202203142340.jpg?im=Resize=(420,420)" alt="Product Image">
+                <p class="product-cost">Cost:rs. 50</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="NOTEBOOK">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="50">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+               </form>
+            </div>
+        
+            </div>
+            
+            
+            <div class="column">
+              <h2>PENCIL</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://m.media-amazon.com/images/I/71Ic1pMvgPL.jpg" alt="Product Image">
+                <p class="product-cost">Cost:rs. 10</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="PENCIL">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="10">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%"  value="Add to Cart">
+               </form>
+            </div>
+            </div>
+            
+            <div class="column">
+              <h2>SCALE</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://4.imimg.com/data4/AW/GR/MY-25578029/long-scale-500x500.jpg" alt="Product Image">
+                <p class="product-cost">Cost:rs. 10</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="SCALE">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="10">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+               </form>
+            </div>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <h2>A3</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://5.imimg.com/data5/MD/JU/RP/SELLER-37145003/a3-size-copier-paper-500x500.jpg" alt="Product Image">
+                <p class="product-cost">Cost:rs. 2</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="A3">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="2">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+               </form>
+            </div>
+              
+            </div>
+            
+            <div class="column">
+              <h2>A4</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://5.imimg.com/data5/MD/JU/RP/SELLER-37145003/a3-size-copier-paper-500x500.jpg" alt="Product Image">
+                <p class="product-cost">Cost:rs. 1</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="A4">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="1">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+               </form>
+            </div>
+              
+            </div>
+            
+            <div class="column">
+              <h2>HEADSET</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://www.primeabgb.com/wp-content/uploads/2022/11/ASUS-ROG-Fusion-II-500-Virtual-7.1-Gaming-Headset-Black-ROG-FUSION-II-500.jpg" alt="Product Image">
+                <p class="product-cost">Cost:rs. 200</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="HEADSET">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="200">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+               </form>
+            </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <h2>BALL POINT PENS</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://5.imimg.com/data5/SELLER/Default/2023/3/PY/AW/BT/25501738/ball-point-pen-with-firm-grip-blue-color-pack-of-1000-pens-free-worldwide-shipping--500x500.jpg" alt="Product Image">
+                <p class="product-cost">Cost:rs. 10</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="BALL POINT PEN">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="10">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+               </form>
+            </div>
+            </div>
+            
+            <div class="column">
+              <h2>DIARY</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://res.fkhealthplus.com/incom/images/product/Doms-Single-Line-A4-Xlumia-Spiral-Exercise-Notebook-297-x-21-cm-Art-No-8245-1657716492-10101518-2.jpg" alt="Product Image">
+                <p class="product-cost">Cost:rs. 50</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="DIARY">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="50">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+               </form>
+            </div>
+            </div>
+            
+            <div class="column">
+              <h2>ERASER</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://cdn.ios.net.au/processed/500x500/e/ERA0320_1.jpg" alt="Product Image">
+                <p class="product-cost">Cost:rs. 5</p>
+                <form action="cart.php">
+                  <input type="hidden" name="item" value="ERASER">
+                    <input type="hidden" name="quantity">
+                   <input type="hidden" name="price" value="5">
+                   <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+               </form>
+            </div>
+            </div>
+            <div class="cart-container">
+              <image src="j.jpg"style="max-width: 100px;
+              margin-left:350px;padding-right:80px;"></image>
+              <div id="cart"></div>
+          </div>
+          </div>
+    </body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    background-color: #15172b;
+  }
+
+  .login-container {
+    border: 1px solid #ccc;
+    padding: 20px;
+    width: 300px;
+    height: 400px;
+    background-color: #fff;
+  }
+
+  .login-container h1 {
+    text-align: center;
+  }
+
+  .login-container input {
+    width: 80%; /* Set the width to 100% to make it fill the container */
+    max-width: 200px; /* Set the maximum width to 300px to decrease the size */
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 3px solid #ccc;
+    border-radius: 4px;
+  }
+
+  .login-container input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+
+</style>
+</head>
+<body>
+  <div class="login-container">
+    <form action="Gurunath Stores.html">
+      <h1 style="margin-right:30px;">LOGIN</h1>
+      <input type="text" style="margin-right:10px;" name="username" placeholder="Name"><br>
+      <input type="email" style="margin-right:10px;" name="pwd" placeholder="Email"><br>
+      <input max-width: 200px; type="submit" value="Login" onclick="log()">
+    </form>
+  </div>
+  <script>
+    function log(){
+    window.alert("Login Successfully");
+    }
+  </script>
+</body>
+</html>

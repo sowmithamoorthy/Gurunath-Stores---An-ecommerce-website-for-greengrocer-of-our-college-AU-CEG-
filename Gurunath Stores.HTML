@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>GURUNATH STORES</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #1c1f38; /* Updated background color */
+      color: white;
+    }
+
+    .header {
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: center;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .title {
+      font-size: 40px;
+      color: #333;
+      margin-left: 30px;
+    }
+
+    .logo {
+      max-width: 100px;
+    }
+
+    .login-box {
+      margin-top: 10px;
+      margin-left: 200px;
+      text-align: right;
+    }
+
+    .login-box input[type="text"],
+    .login-box input[type="password"] {
+      width: 150px;
+      padding: 5px;
+      border: 1px solid #ccc;
+    }
+
+    .login-box input[type="submit"] {
+      padding: 5px 10px;
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+    }
+
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      width: 150px;
+      background-color:  #1c1f38;
+    }
+
+    li a {
+      display: block;
+      color: #000;
+      padding: 8px 16px;
+      text-decoration: none;
+    }
+
+    li {
+      text-align: center;
+      border-bottom: 2px solid white;
+    }
+
+    
+    li a.active {
+      background-color: #6a96d9;
+      color: white;
+    }
+
+    li a:hover:not(.active) {
+      background-color: rgb(233, 229, 229);
+      color: white;
+    }
+
+    nav {
+      float: left;
+      width: 20%;
+      height: 100%;
+      padding: 20px;
+    }
+
+    article {
+      width: 60%;
+      height: 300px;
+    }
+
+    .logo-container {
+      text-align: center;
+      display: flex;
+      align-items: center;
+    }
+
+    .logo {
+      max-width: 100px;
+      margin-right: 10px;
+    }
+
+    .title {
+      flex: 2;
+      margin: 0;
+    }
+
+    .header {
+      display: flex;
+      justify-content: center;
+    }
+
+    h1 {
+      position: relative;
+      left: 10%;
+      font-size: 100%;
+    }
+
+    #vid {
+      text-align: center;
+      margin-top:100px;
+    }
+
+    video {
+      max-height: 400px;
+      width: 130%;
+    }
+
+    article {
+      width: 75%;
+      height: 350px;
+      margin-top: 25px;
+      margin-right: 50px;
+      background-image: url(cookies.jpg);
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      padding: 20px;
+    }
+
+    h2 {
+      font-size: 24px;
+      margin-bottom: 10px;
+      margin-left:0px;
+      color: #f1c40f; /* Updated color for heading */
+    }
+
+    p {
+      font-size: 18px;
+    }
+    .menu-bar {
+      background-color: #1c1f38;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px;
+    }
+
+    .menu-items {
+      list-style-type: none;
+      margin: 2px solid blue;
+      padding: 0;
+      display: flex;
+    }
+
+    .menu-items li {
+      margin-right: 20px;
+    }
+
+    .menu-items li:last-child {
+      margin-right: 0;
+    }
+
+    .menu-items li a {
+      color: white;
+      text-decoration: none;
+    }
+
+    .menu-items li a:hover {
+      color: #6a96d9;
+    }
+
+    .app-download {
+      margin-top: 20px;
+      text-align: center;
+    }
+
+    .app-download img {
+      width: 150px;
+      margin: 10px;
+    }
+
+    .popular-brands {
+      font-size: 20px;
+      color: #3498db; /* Updated color for popular brands */
+    }
+
+  </style>
+</head>
+<body>
+  <div class="header">
+    <div class="logo-container">
+      <img src="logo.jpg.png" alt="Logo" class="logo">
+    </div>
+    <h1 class="title" style="margin-right:35%;">GURUNATH STORES</h1>
+  </div>
+
+  <div class="menu-bar">
+    <ul class="menu-items">
+      <li><a href="login.html">Home</a></li>
+      <li><a href="new.html">Stationaries</a></li>
+      <li><a href="snacks.html">Snacks</a></li>
+      <li><a href="drinks.html">Drinks</a></li>
+      <li><a href="icecreams.html">Icecreams</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="vi.php">Your Orders</a></li>
+    </ul>
+  </div>
+  <article></article>
+
+  <div id="vid">
+    <video autoplay muted>
+      <source src="VID_20230720_150505.mp4" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+
+  <div>
+    <h2 class="app-download" style="margin-right:80%;">DOWNLOAD OUR APP:</h2>
+    <img alt="GooglePlay-BB" data-src="https://www.bbassets.com/static/v2681/custPage/build/content/img/Google-App-store-icon.png" class="ng-scope" src="https://www.bbassets.com/static/v2681/custPage/build/content/img/Google-App-store-icon.png">
+    <img alt="AppStore-BB" data-src="https://www.bbassets.com/static/v2681/custPage/build/content/img/Apple-App-store-icon.png" class="ng-scope" src="https://www.bbassets.com/static/v2681/custPage/build/content/img/Apple-App-store-icon.png">
+  </div>
+
+  <div>
+    <h2 class="popular-brands">POPULAR BRANDS:</h2>
+    <p>
+      Amul, Nescafe, MTR, RED BULL, elite cake, Pediasure, Yummiez, Yera, Yakult, Britannia, Wow Momo, Fortune, Haldirams, Ferrero, Lays, Patanjali, McCain, kwality walls, Cadbury Dairy Milk, Classmate, Navneet, Unigo, Mead, Camlin, Luxor, Paperkraft.
+    </p>
+  </div>
+
+  <script>
+    // Your JavaScript code (if any)
+    const images = ["cookies.jpg", "ice.jpg", "note.jpg", "beve.jpg"];
+    let currentIndex = 0;
+    const articleElement = document.querySelector("article");
+
+    function changeBackgroundImage() {
+      articleElement.style.backgroundImage = `url(${images[currentIndex]})`;
+      currentIndex = (currentIndex + 1) % images.length;
+    }
+
+    setInterval(changeBackgroundImage, 3000);
+  </script>
+</body>
+</html>

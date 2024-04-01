@@ -1,0 +1,251 @@
+<html>
+    <head>
+        <style>
+            * {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}
+
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  padding: 15px;
+}
+
+/* Clear floats after the columns */
+.row::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Responsive layout - makes the three columns stack on top of each other instead of next to each other */
+@media screen and (max-width:600px) {
+  .column {
+    width: 100%;
+  }
+}
+<style>
+        .product-container {
+            text-align: center;
+        }
+        .product-image {
+            max-width: 300px;
+        }
+        .product-cost {
+            font-weight: bold;
+            font-size: 18px;
+        }
+        .add-to-cart-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+        .header {
+  background-color: #f1f1f1;
+  padding: 10px;
+  text-align: center;
+}
+
+</style>
+<script>
+        // Create an empty array to hold the cart items
+        let cartItems = [];
+
+        function addToCart(productName) {
+            // Find the product in the cartItems array based on its name
+            const product = cartItems.find(item => item.name === productName);
+
+            if (product) {
+                // If the product is already in the cart, increase its quantity
+                product.quantity++;
+            } else {
+                // If the product is not in the cart, add it with quantity 1
+                cartItems.push({ name: productName, quantity: 1 });
+            }
+
+            // Update the cart display
+            updateCartDisplay();
+        }
+
+        function updateCartDisplay() {
+            // Find the cart container element
+            const cartContainer = document.getElementById("cart");
+
+            // Clear the current cart content
+            cartContainer.innerHTML = "";
+
+            // Add each item in the cart to the cart container
+            cartItems.forEach(item => {
+                const cartItem = document.createElement("div");
+                cartItem.textContent = `${item.name} x${item.quantity}`;
+                cartContainer.appendChild(cartItem);
+            });
+        }
+    </script>
+    
+
+    </head>
+    <body>
+      <div class="cart-container" style="float:right;">
+        <h2>my basket</h2>
+        <image src="j.jpg"style="max-width: 100px;
+        margin-left:350px;padding-right:80px;"></image>
+        <div id="cart"></div>
+    </div>
+    
+        <div class="header">
+            <h1>ICE CREAMS</h1>
+          </div>
+          
+        <div class="row">
+            <div class="column">
+              <h2>DUSKIN ROBINS</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=85,metadata=none,w=480,h=480/app/images/products/sliding_image/343706a.jpg?ts=1688469723" alt="Product Image">
+                <p class="product-cost">Cost:rs.80</p>
+              <form action="cart.php">
+                    <input type="hidden" name="item" value="DUSKIN ROBINS">
+                      <input type="hidden" name="quantity">
+                     <input type="hidden" name="price" value="80">
+                     <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%"  value="Add to Cart">
+                 </form>
+            </div>
+        
+            </div>
+            
+            
+            <div class="column">
+              <h2>AMUL- CHOCOLATE ICE CREAMS</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSOfZj0lFWGQhdX_ucVmpXlP3sG8wtXtYljog&usqp=CAU" alt="Product Image">
+                <p class="product-cost">Cost:rs. 50</p>
+                <form action="cart.php">
+                    <input type="hidden" name="item" value="AMUL- CHOCOLATE ICE CREAMS">
+                      <input type="hidden" name="quantity">
+                     <input type="hidden" name="price" value="50">
+                     <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+                 </form>
+            </div>
+            </div>
+            
+            <div class="column">
+              <h2>AMUL- CLASSY VANILLA ICE CREAMS</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://lh3.googleusercontent.com/rlwF9Kp1WoG8Jn8vjEIVKrdbOscwHQKVXuaowSbxeTRIF90yYZQNSg5UVzhzUqV0uj2Wi_9F2enEBXeULQw1DtDpKexZhpd27fOs2VYjew=w400-rw" alt="Product Image">
+                <p class="product-cost">Cost:rs. 60</p>
+                 <form action="cart.php">
+                    <input type="hidden" name="item" value="AMUL-CLASSY VANILLA ICE CREAMS">
+                      <input type="hidden" name="quantity">
+                     <input type="hidden" name="price" value="60">
+                     <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%"  value="Add to Cart">
+                 </form>
+           
+            </div>
+              
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <h2>DUSKIN ROBINS-CHOCO BARS</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://www.bigbasket.com/media/uploads/p/l/40126075-3_2-baskin-robbins-vanilla-chocolate-ice-cream.jpg" alt="Product Image">
+                <p class="product-cost">Cost:rs. 60</p>
+             <form action="cart.php">
+                    <input type="hidden" name="item" value="DUSKIN ROBINS-CHOCO BARS">
+                      <input type="hidden" name="quantity">
+                     <input type="hidden" name="price" value="60">
+                     <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+                 </form>
+           
+            </div>
+              
+            </div>
+            
+            <div class="column">
+              <h2>SIP SIP</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://www.trolleyin.com/images/thumbs/0004017_sipup-combo-mango-and-pineapple_510.jpeg" alt="Product Image">
+                <p class="product-cost">Cost:rs.5</p>
+                 <form action="cart.php">
+                    <input type="hidden" name="item" value="SIP SIP">
+                      <input type="hidden" name="quantity">
+                     <input type="hidden" name="price" value="5">
+                     <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+                 </form>
+            </div>
+              
+            </div>
+            
+            <div class="column">
+              <h2>BUTTERSCOTCH CUPS</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQzjz7jrKY5opH3l9vm1BOfyJK4OTzPCcQkLDr7R2zZ1H0kcnbAdx4JsOxXGa9Du2tVp6c&usqp=CAU" alt="Product Image">
+                <p class="product-cost">Cost:rs. 50</p>
+                 <form action="cart.php">
+                    <input type="hidden" name="item" value="BUTTERSCOTCH CUPS">
+                      <input type="hidden" name="quantity">
+                     <input type="hidden" name="price" value="50">
+                     <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+                 </form>
+            </div>
+            </div>
+          </div>
+          <div class="row">
+            <div class="column">
+              <h2>OREO CUPS</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0QZupDSAd_tJY8fr8vRA4tKeXwzFBtOIYmAL3SIG4bN_j7D2IANdp4-Dn3bpI6yehuRk&usqp=CAU" alt="Product Image">
+                <p class="product-cost">Cost:rs.40</p>
+                <form action="cart.php">
+                    <input type="hidden" name="item" value="OREO CUPS">
+                      <input type="hidden" name="quantity">
+                     <input type="hidden" name="price" value="40">
+                     <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+                 </form>
+            </div>
+            </div>
+            
+            <div class="column">
+              <h2>GULFI</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://images.meesho.com/images/products/113998428/q6elh_512.webp" alt="Product Image">
+                <p class="product-cost">Cost:rs. 30</p>
+                <form action="cart.php">
+                    <input type="hidden" name="item" value="GULFI">
+                      <input type="hidden" name="quantity">
+                     <input type="hidden" name="price" value="30">
+                     <input type="submit" style="background-color:rgb(114, 114, 227);width:30%;height:5%" value="Add to Cart">
+                 </form>
+            </div>
+            </div>
+            
+            <div class="column">
+              <h2>VANILLA CUPS</h2>
+              <div class="product-container">
+                <img class="product-image" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTy8ZVowbTP8xUQfNA9PJOA9_MbP7qZiSc1Kw&usqp=CAU" alt="Product Image">
+                <p class="product-cost">Cost:rs. 40</p>
+                <form action="cart.php">
+                    <input type="hidden" name="item" value="VANNILA CUPS">
+                      <input type="hidden" name="quantity">
+                     <input type="hidden" style="background-color:rgb(114, 114, 227);width:30%;height:5%" name="price" value="40">
+                 </form>
+            </div>
+            </div>
+            
+          </div>
+    </body>
+</html>
